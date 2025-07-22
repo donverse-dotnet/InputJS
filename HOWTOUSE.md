@@ -67,3 +67,10 @@ InputJS.update();
 ## 5. 注意事項
 - GitHub Packagesからインストールする場合、`.npmrc`の設定とGitHub認証が必要です。
 - 詳細は[GitHub公式ドキュメント](https://docs.github.com/ja/packages/working-with-a-github-packages-registry/working-with-the-npm-registry)も参照してください。
+
+---
+> [!NOTE]
+> このライブラリはMITライセンスで提供されています。
+> MITライセンスのもと、商用・非商用問わず自由に利用・改変・再配布が可能ですが、
+> 著作権表示およびライセンス文書の同梱が必要です。
+> 詳しくはLICENSE.mdをご確認ください。
