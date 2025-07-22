@@ -1,5 +1,27 @@
 {
-  "devDependencies": {
-    "typescript": "^5.8.3"
-  }
+    "name": "inputjs",
+    "version": "1.0.0",
+    "description": "UnityのInputクラス風APIでWebページ上のキーボード・マウス入力を管理できるTypeScriptライブラリ",
+    "main": "out/InputJS.js",
+    "types": "out/InputJS.d.ts",
+    "scripts": {
+        "build": "tsc"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/donverse-dotnet/InputJS.git"
+    },
+    "keywords": [
+        "input",
+        "unity",
+        "keyboard",
+        "mouse",
+        "typescript",
+        "javascript"
+    ],
+    "author": "himar",
+    "license": "MIT",
+    "devDependencies": {
+        "typescript": "^5.8.3"
+    }
 }
