@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>InputJS テスト</title>
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+
+        #log {
+            white-space: pre;
+            background: #f0f0f0;
+            padding: 1em;
+            height: 200px;
+            overflow-y: auto;
+        }
+
+        .test-box {
+            width: 100px;
+            height: 100px;
+            background: #8cf;
+            margin: 20px;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>InputJS テスト</h1>
+    <div id="log"></div>
+    <div class="test-box" id="box1">Box1</div>
+    <div class="test-box" id="box2">Box2</div>
+    <script type="module">
+        import { InputJS } from './out/InputJS.js';
+
+        const log = (msg) => {
+            const el = document.getElementById('log');
+            el.textContent += msg + '\n';
+            el.scrollTop = el.scrollHeight;
+        };
+
+        // キーイベントテスト
+        InputJS.on('OnKeyWPressed', () => log('Wキーが押されました'));
+        InputJS.on('OnKeyWReleased', () => log('Wキーが離されました'));
+        InputJS.on('OnKeyEscapePressed', () => log('Escapeキーが押されました'));
+
+        // 全キーイベントテスト
+        InputJS.on('OnAnyKeyPressed', (key) => log(`[全キー] ${key} が押されました`));
+        InputJS.on('OnAnyKeyReleased', (key) => log(`[全キー] ${key} が離されました`));
+
+        // マウスイベントテスト
+        InputJS.on('OnMouseLeftPressed', () => log('マウス左ボタンが押されました'));
+        InputJS.on('OnMouseLeftReleased', () => log('マウス左ボタンが離されました'));
+        InputJS.on('OnMouseRightPressed', () => log('マウス右ボタンが押されました'));
+        InputJS.on('OnMouseRightReleased', () => log('マウス右ボタンが離されました'));
+
+        // マウス座標・要素テスト
+        setInterval(() => {
+            const pos = InputJS.mousePosition;
+            const elem = InputJS.getElementOnMouse();
+            log(`マウス座標: (${pos.x}, ${pos.y}) 要素: ${elem ? elem.id || elem.tagName : 'なし'}`);
+            InputJS.update();
+        }, 1000);
+    </script>
+</body>
+
+</html>
