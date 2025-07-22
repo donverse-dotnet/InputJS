@@ -1,6 +1,6 @@
 {
     "name": "@donverse-dotnet/inputjs",
-    "version": "1.0.0",
+    "version": "1.0.3",
     "description": "UnityのInputクラス風APIでWebページ上のキーボード・マウス入力を管理できるTypeScriptライブラリ",
     "main": "out/InputJS.js",
     "types": "out/InputJS.d.ts",
